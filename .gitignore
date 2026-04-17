@@ -1,0 +1,60 @@
+# =========================================================
+# .gitignore
+# Controle de fluxo para o Git
+# =========================================================
+
+
+# DIRECTORIES ---------------------------------------------
+morto/
+_*/
+_output/
+_references/
+
+
+# OUTROS --------------------------------------------------
+
+# Quarto
+notebooks/.quarto/
+/.quarto/
+**/*.quarto_ipynb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Arquivos de ambiente
+.env
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporários
+*.tmp
+*.bak
+
+# Claude
+CLAUDE.md
+.claude/
+.remember
+.Rproj.user
