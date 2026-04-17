@@ -1,0 +1,20 @@
+project:
+  type: default
+engine: knitr
+lang: pt-BR
+date-format: "long"
+
+bibliography: assets/bibliografia.bib
+csl: assets/abnt_alceu.csl
+
+fig-cap-location: top
+
+format:
+  typst:
+    template: _templates/ufpr-dissertacao.typ
+    papersize: a4
+    toc: true
+    toc-depth: 3
+    section-numbering: "1.1.1"
+    keep-typ: true
+    keep-md: true

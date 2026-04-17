@@ -1,0 +1,111 @@
+---
+title: "Titulo da dissertação"
+subtitle: "Subtitulo opcional"
+author:
+  - name: "{{ Autor Nome e Sobrenome }}"
+advisor: "Profª. Drª. {{ Nome Sobrenome }}"
+submission-note: >
+  Dissertação apresentada como requisito parcial à obtenção
+  de título de {{ titulo }}, Curso de {{ curso }}, Setor
+  de {{ setor }} da Universidade Federal do Paraná.
+committee:
+  - name: "Prof. Dr. {{ Nome Sobrenome }}"
+    institution: "Universidade Federal do Paraná"
+  - name: "Prof. Dr. {{ Nome Sobrenome }}"
+    institution: "Universidade Federal do Paraná"
+  - name: "Prof. Dr. {{ Nome Sobrenome }}"
+    institution: "Universidade Federal do Paraná"
+defense-date: "{{ DD }} de {{ mês }} de {{ AAAA }}"
+city: "Curitiba"
+year: "2026"
+resumo: |
+  Texto do resumo em português.
+palavras-chave: "Palavra1; Palavra2; Palavra3"
+abstract: |
+  Abstract text in English.
+keywords: "Keyword1; Keyword2; Keyword3"
+---
+
+```{r setup}
+#| include: false
+source(here::here("R", "setup.R"))
+```
+
+{{< pagebreak >}}
+
+# Introdução {.unnumbered}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+# Seção primária
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+```{r}
+#| label: tbl-planets
+#| tbl-cap: "Astronomical object"
+
+data.frame(
+  `Astronomical object` = c("Sun", "Earth", "Moon", "Mars"),
+  `R (km)`              = c("696,000", "6,371", "1,737", "3,390"),
+  `mass (kg)`           = c(1.989e30, 5.972e24, 7.34e22, 6.39e23),
+  check.names = FALSE
+) |>
+  knitr::kable()
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+## Seção secundária
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur @mishkinMonetaryTergetingInflation2000.
+
+![Oferta e Demanda](images/supply_demand.svg){width=4in}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur @sargentUnpleasantMonetaristArithmetic1981.
+
+### Seção terciária
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur:
+
+> "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur." [ @mishkinEconomicsMoneyBanking2011 ]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+#### Seção quaternária
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Titulo da Tabela {#tbl-qualquer}
+
+Ver @tbl-qualquer.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+# Aspernatur aut odit aut fugit
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. 
+
+```{r}
+#| label: tbl-mtcars-sample
+#| tbl-cap: "Consumo e deslocamento de automóveis selecionados, 1973-74"
+
+mtcars[1:6, 1:3] |>
+  gt_abnt(rowname_col = NULL) |>
+  tab_source_note(source_note = md("**Fonte:** Henderson & Velleman (1981), *Building Multiple Regression Models Interactively*.")) |>
+  tab_source_note(source_note = md("**Nota:** Valores originais em unidades imperiais (mpg, cu.in., hp)."))
+```
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+{{< pagebreak >}}
+
+# Conclusão {.unnumbered}
+
+{{< pagebreak >}}
